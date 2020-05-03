@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Models\Application.Models.csproj" />
+    <ProjectReference Include="..\Framework.Diagnostics\Framework.Diagnostics.csproj" />
+    <ProjectReference Include="..\Framework.ViewModels\Framework.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
