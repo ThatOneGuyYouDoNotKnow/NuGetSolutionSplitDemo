@@ -4,6 +4,11 @@
 
   <PropertyGroup>
     <OutputPath>$(SolutionDir)\bin\$(Configuration)\$(Platform)</OutputPath>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <!--https://github.com/microsoft/msbuild/issues/1310:
+    GenerateBindingRedirectsOutputType might need to be set in a target because it has to be set after the initial evaluation in the common targets.
+    But for me it works here just fine.-->
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
   </PropertyGroup>
 
   <!--NuGet properties-->

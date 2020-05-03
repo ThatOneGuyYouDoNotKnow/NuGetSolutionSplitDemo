@@ -1,5 +1,5 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!-- This file can be used to add targets to all projects within this directory and sub-directories when a solution from this directory is build. -->
+  <!--This file can be used to add targets to all projects within this directory and sub-directories when a solution from this directory is build.-->
 
   <!--NuGet packages that all projects should use-->
   <ItemGroup>
@@ -13,9 +13,29 @@
                       PrivateAssets="all" />
   </ItemGroup>
 
-  <!--This target ensures, that all munually copied files are contained in the created NuGet-Packages and copied into the output of consuming projects.-->
+  <!--This target ensures, that all munually copied files are contained in the created NuGet-Packages and copied into the output of consuming projects.
+  The AfterTargets and BeforeTargets can probably be set to better values, but this worked for me.-->
   <Target Name="ManuallyCopiedFilesNuGetManagement"
           BeforeTargets="Build">
+
+    <!--Include XmlSerializers.dll files in NuGet packages-->
+    <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).XmlSerializers.dll"
+            Condition="exists('$(OutputPath)\$(AssemblyName).XmlSerializers.dll')"
+            Pack="true"
+            PackagePath="$(BuildOutputTargetFolder)\$(TargetFramework)" />
+      <!--This PackagePath does not work with the old project structure!-->
+    </ItemGroup>
+
+    <!--Include dll.config files in NuGet packages-->
+    <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).dll.config"
+            Condition="exists('$(OutputPath)\$(AssemblyName).dll.config')"
+            Pack="true"
+            PackagePath="Config" />
+    </ItemGroup>
+
+    <!--Include manually copied files in NuGet packages and ensure they are copied in consuming projects-->
     <ItemGroup>
       <Content Include="$(SolutionDir)\CommonFiles\CommonNuGetBuildTransitive.targets"
                Pack="true"
