@@ -1,11 +1,29 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ManuallyCopiedFilesDemo\Content.json" />
+    <None Remove="ManuallyCopiedFilesDemo\ContentCopyToOutput.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ManuallyCopiedFilesDemo\ContentCopyToOutput.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ManuallyCopiedFilesDemo\Content.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Framework.Diagnostics\Framework.Diagnostics.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ManuallyCopiedFilesDemo\NoneCopyToOutput.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
