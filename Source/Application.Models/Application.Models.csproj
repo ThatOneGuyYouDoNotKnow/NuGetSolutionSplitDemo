@@ -6,11 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Framework.Diagnostics" Version="*" />
+    <PackageReference Include="Framework.Diagnostics"
+                      Version="*" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Framework.Diagnostics\Framework.Diagnostics.csproj" />
+    <ProjectReference Include="..\Framework.Diagnostics\Framework.Diagnostics.csproj"
+                      Condition="'$(Configuration)' != 'NuGet'" />
   </ItemGroup>
 
 </Project>
