@@ -5,13 +5,15 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Views", "Application.Views\Application.Views.csproj", "{5CCAF2E3-645B-4FCC-AC34-77407AF8AEB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.ViewModels", "Application.ViewModels\Application.ViewModels.csproj", "{735364D3-D5E7-4AE9-86CE-2ABCA77996DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.ViewModels", "Application.ViewModels\Application.ViewModels.csproj", "{735364D3-D5E7-4AE9-86CE-2ABCA77996DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Models", "Application.Models\Application.Models.csproj", "{5062CE0E-59A4-4A3F-9620-962ADD43046D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.Models", "Application.Models\Application.Models.csproj", "{5062CE0E-59A4-4A3F-9620-962ADD43046D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Diagnostics", "Framework.Diagnostics\Framework.Diagnostics.csproj", "{781C04BD-2A41-4183-85E9-606D98DDDC9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Diagnostics", "Framework.Diagnostics\Framework.Diagnostics.csproj", "{781C04BD-2A41-4183-85E9-606D98DDDC9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.ViewModels", "Framework.ViewModels\Framework.ViewModels.csproj", "{76E86557-4C55-418D-A98C-34A186930D0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.ViewModels", "Framework.ViewModels\Framework.ViewModels.csproj", "{76E86557-4C55-418D-A98C-34A186930D0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonFiles", "CommonFiles\CommonFiles.csproj", "{BF76C055-F5A4-411F-A590-7F7B17C5D7B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,8 @@ Global
 		{76E86557-4C55-418D-A98C-34A186930D0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E86557-4C55-418D-A98C-34A186930D0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E86557-4C55-418D-A98C-34A186930D0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF76C055-F5A4-411F-A590-7F7B17C5D7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF76C055-F5A4-411F-A590-7F7B17C5D7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
