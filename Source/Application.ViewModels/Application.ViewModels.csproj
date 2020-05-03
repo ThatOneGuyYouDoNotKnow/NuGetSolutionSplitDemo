@@ -1,14 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Configurations>Debug;Release;NuGet</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Framework.Diagnostics"
-                      Version="*" />
-    <PackageReference Include="Framework.ViewModels"
-                      Version="*" />
+    <PackageReference Include="Framework.Diagnostics" Version="*" />
+    <PackageReference Include="Framework.ViewModels" Version="*" />
   </ItemGroup>
 
   <ItemGroup>

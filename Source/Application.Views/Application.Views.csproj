@@ -4,11 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Configurations>Debug;Release;NuGet</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Framework.Diagnostics"
-                      Version="*" />
+    <PackageReference Include="Framework.Diagnostics" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
