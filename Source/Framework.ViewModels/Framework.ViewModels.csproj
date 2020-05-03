@@ -5,15 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ManuallyCopiedFilesDemo\Content.json" />
-    <None Remove="ManuallyCopiedFilesDemo\ContentCopyToOutput.json" />
+    <None Remove="Content.json" />
+    <None Remove="ContentCopyToOutput.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="ManuallyCopiedFilesDemo\ContentCopyToOutput.json">
+    <Content Include="Content.json" />
+    <Content Include="ContentCopyToOutput.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="ManuallyCopiedFilesDemo\Content.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ManuallyCopiedFilesDemo\NoneCopyToOutput.json">
+    <None Update="NoneCopyToOutput.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
