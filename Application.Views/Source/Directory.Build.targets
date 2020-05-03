@@ -1,0 +1,35 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This file can be used to add targets to all projects within this directory and sub-directories when a solution from this directory is build. -->
+
+  <!--NuGet packages that all projects should use-->
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations"
+                      Version="2019.1.3" />
+    <PackageReference Include="JetBrains.ExternalAnnotations"
+                      Version="10.2.77" />
+    <PackageReference Include="NuGet.Build.Tasks.Pack"
+                      Version="5.5.1"
+                      IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive"
+                      PrivateAssets="all" />
+  </ItemGroup>
+
+  <!--This target ensures, that all munually copied files are contained in the created NuGet-Packages and copied into the output of consuming projects.-->
+  <Target Name="ManuallyCopiedFilesNuGetManagement"
+          BeforeTargets="Build">
+    <ItemGroup>
+      <Content Include="$(SolutionDir)\CommonFiles\CommonNuGetBuildTransitive.targets"
+               Pack="true"
+               PackagePath="buildTransitive\$(AssemblyName).targets" />
+      <None Update="@(None)"
+            Condition="%(CopyToOutputDirectory) == PreserveNewest or %(CopyToOutputDirectory) == Always"
+            Pack="true"
+            PackagePath="ManuallyCopiedFiles;%(None.PackagePath)" />
+      <Content Update="@(Content)"
+               Condition="%(CopyToOutputDirectory) == PreserveNewest or %(CopyToOutputDirectory) == Always"
+               Pack="true"
+               PackagePath="ManuallyCopiedFiles;%(Content.PackagePath)" />
+    </ItemGroup>
+
+  </Target>
+
+</Project>

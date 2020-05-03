@@ -1,0 +1,32 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--This file can be used to add properties to all projects within this directory and sub-directories when a solution from this directory is build.
+  In an automated build process these properties can be overruled by directly adding them as parameters when calling msbuild-->
+
+  <PropertyGroup>
+    <OutputPath>$(SolutionDir)\bin\$(Configuration)\$(Platform)</OutputPath>
+  </PropertyGroup>
+
+  <!--NuGet properties-->
+  <PropertyGroup>
+    <!--Set GeneratePackageOnBuild to true to generate NuGet packages-->
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <!--PackageOutputPath defines the path where NuGet packages generated-->
+    <PackageOutputPath>$(SolutionDir)\PackageOutputPath</PackageOutputPath>
+    <!--Authors defines the Authors of the generated NuGet packages-->
+    <Authors>noones Business</Authors>
+    <!--PackageVersion defines the Version of the generated NuGet packages and defaults to the $(Version) Property if it is defined-->
+    <PackageVersion>0.0.0.1</PackageVersion>
+    <!--PackageIcon defines the path to an image file inside the package to be used as the thumbnail of the generated NuGet packages
+    supported formats: jpg, jpeg, png
+    prefered size: 128x128 pixel
+    the icon file has to be included manually (e.g. with an include in the Directory.Build.targets)-->
+    <!--<PackageIcon></PackageIcon>-->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+    <!--RestoreSources defines the locations from where NuGet packages are restored
+    by adding PackageOutputPath the locally generated packages are considered for the restore
+    this is helpful when workung multiple Solutions in a big workspace that are included as both Project- and PackageReference-->
+    <RestoreSources Condition="exists($(PackageOutputPath))">$(PackageOutputPath);$(RestoreSources)</RestoreSources>
+  </PropertyGroup>
+
+</Project>
