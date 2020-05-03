@@ -13,8 +13,8 @@
 
   <!--NuGet properties-->
   <PropertyGroup>
-    <!--Set GeneratePackageOnBuild to true to generate NuGet packages-->
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <!--GeneratePackageOnBuild defines if NuGet packages should be generated on build-->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <!--PackageOutputPath defines the path where NuGet packages generated-->
     <PackageOutputPath>$(SolutionDir)\PackageOutputPath</PackageOutputPath>
     <!--Authors defines the Authors of the generated NuGet packages-->
