@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Framework.Diagnostics"
+                      Version="*" />
+    <PackageReference Include="Framework.ViewModels"
+                      Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Application.Models\Application.Models.csproj" />
     <ProjectReference Include="..\Framework.Diagnostics\Framework.Diagnostics.csproj" />
     <ProjectReference Include="..\Framework.ViewModels\Framework.ViewModels.csproj" />

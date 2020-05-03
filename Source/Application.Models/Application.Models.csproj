@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Framework.Diagnostics"
+                      Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Framework.Diagnostics\Framework.Diagnostics.csproj" />
   </ItemGroup>
 
