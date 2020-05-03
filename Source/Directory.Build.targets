@@ -35,6 +35,14 @@
             PackagePath="ManuallyCopiedFiles" />
     </ItemGroup>
 
+    <!--Include deps.json files in NuGet packages-->
+    <ItemGroup>
+      <None Include="$(OutputPath)\$(AssemblyName).deps.json"
+            Condition="exists('$(OutputPath)\$(AssemblyName).deps.json')"
+            Pack="true"
+            PackagePath="ManuallyCopiedFiles" />
+    </ItemGroup>
+
     <!--Include manually copied files in NuGet packages and ensure they are copied in consuming projects-->
     <ItemGroup>
       <Content Include="$(SolutionDir)\CommonFiles\CommonNuGetBuildTransitive.targets"
