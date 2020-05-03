@@ -32,7 +32,7 @@
       <None Include="$(OutputPath)\$(AssemblyName).dll.config"
             Condition="exists('$(OutputPath)\$(AssemblyName).dll.config')"
             Pack="true"
-            PackagePath="Config" />
+            PackagePath="ManuallyCopiedFiles" />
     </ItemGroup>
 
     <!--Include manually copied files in NuGet packages and ensure they are copied in consuming projects-->
