@@ -4,6 +4,7 @@
 
   <PropertyGroup>
     <OutputPath>$(SolutionDir)\bin\$(Configuration)\$(Platform)</OutputPath>
+    <BaseIntermediateOutputPath>$(SolutionDir)\obj\$(Configuration)\$(Platform)\$(AssemblyName)</BaseIntermediateOutputPath>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <!--https://github.com/microsoft/msbuild/issues/1310:
     GenerateBindingRedirectsOutputType might need to be set in a target because it has to be set after the initial evaluation in the common targets.
