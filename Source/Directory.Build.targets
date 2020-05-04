@@ -24,7 +24,7 @@
             Condition="exists('$(OutputPath)\$(AssemblyName).XmlSerializers.dll')"
             Pack="true"
             PackagePath="$(BuildOutputTargetFolder)\$(TargetFramework)" />
-      <!--This PackagePath does not work with the old project structure!-->
+      <!--This PackagePath with $(TargetFramework) does not work with the old project structure!-->
     </ItemGroup>
 
     <!--Include dll.config files in NuGet packages-->
@@ -51,11 +51,15 @@
       <None Update="@(None)"
             Condition="%(CopyToOutputDirectory) == PreserveNewest or %(CopyToOutputDirectory) == Always"
             Pack="true"
-            PackagePath="ManuallyCopiedFiles;%(None.PackagePath)" />
+            PackagePath="ManuallyCopiedFiles" />
       <Content Update="@(Content)"
                Condition="%(CopyToOutputDirectory) == PreserveNewest or %(CopyToOutputDirectory) == Always"
                Pack="true"
-               PackagePath="ManuallyCopiedFiles;%(Content.PackagePath)" />
+               PackagePath="ManuallyCopiedFiles;content;contentFiles\any\$(TargetFramework)" />
+      <!--This PackagePath with $(TargetFramework) does not work with the old project structure!-->
+      <!--From what I have seen the default PackagePath is defined in NuGet.Build.Tasks.Pack.PackTaskLogic.GetContentMetadata
+      wich is called in the PackTask itself so it is impossible to define a target that simply 'adds' a PackagePath; it is currently only possible to override it.
+      So eaven if I would prefer to use ;%(Content.PackagePath) at the end of the PackagePath, it would do nothing.-->
     </ItemGroup>
 
   </Target>
