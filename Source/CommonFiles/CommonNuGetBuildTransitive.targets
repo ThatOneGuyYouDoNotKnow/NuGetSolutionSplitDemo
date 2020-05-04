@@ -1,8 +1,16 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)\..\ManuallyCopiedFiles\*"
-          CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
+  <Target Name="CopyManuallyCopiedFilesToOutput"
+          AfterTargets="Build">
+
+    <ItemGroup>
+      <NuGetCopiedFiles Include="$(MSBuildThisFileDirectory)\..\ManuallyCopiedFiles\*" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(NuGetCopiedFiles)"
+          DestinationFiles="@(NuGetCopiedFiles->'$(OutputPath)%(Filename)%(Extension)')"
+          Condition="!exists(@(NuGetCopiedFiles->'$(OutputPath)%(Filename)%(Extension)'))" />
+
+  </Target>
 
 </Project>
