@@ -10,6 +10,9 @@
     GenerateBindingRedirectsOutputType might need to be set in a target because it has to be set after the initial evaluation in the common targets.
     But for me it works here just fine.-->
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <Version>0.0.0.0001</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <!--<GenerateNuspecDependsOn>IncludeManuallyCopiedFilesInNuGetPackage; $(GenerateNuspecDependsOn)</GenerateNuspecDependsOn>-->
   </PropertyGroup>
 
   <!--NuGet properties-->
@@ -20,8 +23,8 @@
     <PackageOutputPath>$(SolutionDir)\PackageOutputPath</PackageOutputPath>
     <!--Authors defines the Authors of the generated NuGet packages-->
     <Authors>noones Business</Authors>
-    <!--PackageVersion defines the Version of the generated NuGet packages and defaults to the $(Version) Property if it is defined-->
-    <PackageVersion>0.0.0.1</PackageVersion>
+    <!--PackageVersion defines the Version of the generated NuGet packages-->
+    <PackageVersion>$(Version)</PackageVersion>
     <!--PackageIcon defines the path to an image file inside the package to be used as the thumbnail of the generated NuGet packages
     supported formats: jpg, jpeg, png
     prefered size: 128x128 pixel
