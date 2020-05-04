@@ -4,7 +4,8 @@
 
   <PropertyGroup>
     <OutputPath>$(SolutionDir)\bin\$(Configuration)\$(Platform)</OutputPath>
-    <BaseIntermediateOutputPath>$(SolutionDir)\obj\$(Configuration)\$(Platform)\$(AssemblyName)</BaseIntermediateOutputPath>
+    <!--BaseIntermediateOutputPath seems to break the generated NuGet packages by referencing themselves as dependency... wtf-->
+    <!--<BaseIntermediateOutputPath>$(SolutionDir)\obj\$(Configuration)\$(Platform)\$(AssemblyName)</BaseIntermediateOutputPath>-->
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <!--https://github.com/microsoft/msbuild/issues/1310:
     GenerateBindingRedirectsOutputType might need to be set in a target because it has to be set after the initial evaluation in the common targets.
